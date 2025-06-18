@@ -17,11 +17,20 @@ jobs:
                 cat dragon.txt
                 grep -i dragon dragon.txt
                 ls -la
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+          with:
+            name: dragon-file-text
+            path: dragon.txt
   
   test-job:
     name: Testing the file
     runs-on: ubuntu-latest
     steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+        with:
+          name: dragon-file-text
     - name: read the file
       run: |
             echo "read the file again"
