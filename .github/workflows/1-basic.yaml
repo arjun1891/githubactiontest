@@ -11,6 +11,10 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
       - name: List Files
-        run: ls
-      - name: Read a File
-        run: cat index.html
+        run: |
+                echo "I am listing files now"
+                ls
+                
+                echo "Whats inside index.html?"
+
+                cat index.html
