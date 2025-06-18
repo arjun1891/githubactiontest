@@ -1,17 +1,17 @@
-name : Basic GitHub Actions for cosway
+name : Basic GitHub Actions for Cowsay
 
 on:
   push:
 
 jobs:
   asciijob:
-    name: Working with cosway
+    name: Working with cowsay
     runs-on: ubuntu-latest
     steps:
-      - name: Installing cosway command
-        run: sudo apt-get install -y cosway
-      - name: running cosway command
-        run: cosway -f dragon "This must be a dragon" >> dragon.txt
+      - name: Installing cowsay command
+        run: sudo apt-get install -y cowsay
+      - name: running cowsay command
+        run: cowsay -f dragon "This must be a dragon" >> dragon.txt
       - name: Read the file
         run: |
                 cat dragon.txt
