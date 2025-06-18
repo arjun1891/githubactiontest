@@ -4,6 +4,12 @@ on:
   push:
 
 jobs:
+  checkout:
+    name: Checking out Repo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
   testing:
     name: Testing Files
     runs-on: ubuntu-latest
