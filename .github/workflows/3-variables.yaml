@@ -2,13 +2,12 @@ name: Exploring Varibales and Secrets
 
 on:
   push:
-
+env:
+  DOCKER_USERNAME: arjun1891
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
       - name: step level env
-        env:
-          DOCKER_USERNAME: arjun1891
-        run: echo docker build -t docker.io/$DOCKER_USERNAME/webimg
-      - run: echo docker login --username: $DOCKER_USERNAME --password=querty
+        run: echo docker build -t docker.io/${{ env.DOCKER_USERNAME }}/webimg
+      - run: echo docker login --username=$DOCKER_USERNAME --password=querty
