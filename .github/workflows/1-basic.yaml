@@ -3,17 +3,13 @@ name: Basic Github Actions YAML
 on:
   push:
 
-jobs:
-  checkout:
-    name: Checking out Repo
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
+jobs:    
   testing:
     name: Testing Files
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
       - name: List Files
         run: ls
       - name: Read a File
