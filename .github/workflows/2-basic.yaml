@@ -12,6 +12,11 @@ jobs:
         run: sudo apt-get install -y cowsay
       - name: running cowsay command
         run: cowsay -f dragon "This must be a dragon" >> dragon.txt
+      - name: Read the file
+        run: |
+                cat dragon.txt
+                grep -i dragon dragon.txt
+                ls -la
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -27,7 +32,20 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: dragon-file-text
-    - name: read the file
+    - name: Grep word Dragon
       run: |
-            echo "read the file again"
-            cat dragon.txt
+              grep -i dragon dragon.txt
+              ls -la
+  
+  display-job:
+    needs: test-job
+    name: Testing the file
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: dragon-file-text
+        run: |
+                cat dragon.txt
+
