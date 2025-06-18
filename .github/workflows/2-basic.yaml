@@ -19,9 +19,9 @@ jobs:
                 ls -la
       - name: Upload artifact
         uses: actions/upload-artifact@v4
-          with:
-            name: dragon-file-text
-            path: dragon.txt
+        with:
+          name: dragon-file-text
+          path: dragon.txt
   
   test-job:
     name: Testing the file
@@ -29,8 +29,8 @@ jobs:
     steps:
     - name: Download artifact
       uses: actions/download-artifact@v4
-        with:
-          name: dragon-file-text
+      with:
+        name: dragon-file-text
     - name: read the file
       run: |
             echo "read the file again"
