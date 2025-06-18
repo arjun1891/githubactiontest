@@ -1,0 +1,24 @@
+name: Testing Concurrency
+
+on:
+  push:
+
+jobs:    
+  testing:
+    name: Testing Files
+    runs-on: ubuntu-latest
+    concurrency:
+      cancel-in-progress: true
+      group: testing
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: List Files
+        run: |
+                echo "I am listing files now"
+                ls
+                
+                echo "Whats inside index.html?"
+
+                cat index.html
+                sleep 600

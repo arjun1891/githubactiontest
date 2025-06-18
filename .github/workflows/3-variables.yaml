@@ -1,7 +1,7 @@
 name: Exploring Varibales and Secrets
 
 on:
-  push:
+  workflow_dispatch:
 env:
   DOCKER_USERNAME: arjun1891
 jobs:
