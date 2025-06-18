@@ -17,3 +17,12 @@ jobs:
                 cat dragon.txt
                 grep -i dragon dragon.txt
                 ls -la
+  
+  test-job:
+    name: Testing the file
+    runs-on: ubuntu-latest
+    steps:
+    - name: read the file
+      run: |
+            echo "read the file again"
+            cat dragon.txt
