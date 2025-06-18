@@ -17,4 +17,4 @@ jobs:
       - name: List Files
         run: ls
       - name: Read a File
-        run: cat README.md
+        run: cat index.html
