@@ -1,0 +1,14 @@
+name: Basic Github Actions YAML
+
+on:
+  push:
+
+jobs:
+  testing:
+    name: Testing Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files
+        run: ls
+      - name: Read a File
+        run: cat README.md
