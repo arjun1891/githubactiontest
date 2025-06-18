@@ -8,7 +8,7 @@ jobs:
     name: Testing Files
     runs-on: ubuntu-latest
     concurrency:
-      cancel-in-progress: true
+      cancel-in-progress: false
       group: testing
     steps:
       - name: Checkout Repo
@@ -21,4 +21,4 @@ jobs:
                 echo "Whats inside index.html?"
 
                 cat index.html
-                sleep 6000
+                sleep 600
