@@ -46,6 +46,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: dragon-file-text
-        run: |
+    - name: Display file
+      run: |
                 cat dragon.txt
 
