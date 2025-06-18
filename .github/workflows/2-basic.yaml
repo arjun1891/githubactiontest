@@ -1,0 +1,19 @@
+name : Basic GitHub Actions for cosway
+
+on:
+  push:
+
+jobs:
+  asciijob:
+    name: Working with cosway
+    runs-on: ubuntu-latest
+    steps:
+      - name: Installing cosway command
+        run: sudo apt-get install -y cosway
+      - name: running cosway command
+        run: cosway -f dragon "This must be a dragon" >> dragon.txt
+      - name: Read the file
+        run: |
+                cat dragon.txt
+                grep -i dragon dragon.txt
+                ls -la
