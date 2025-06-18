@@ -21,4 +21,4 @@ jobs:
                 echo "Whats inside index.html?"
 
                 cat index.html
-                sleep 600
+                sleep 6000
