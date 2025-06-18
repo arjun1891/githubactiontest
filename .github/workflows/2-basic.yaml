@@ -19,6 +19,7 @@ jobs:
           path: dragon.txt
   
   test-job:
+    needs: asciijob
     name: Testing the file
     runs-on: ubuntu-latest
     steps:
